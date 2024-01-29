@@ -1,0 +1,8 @@
+---
+- name: Setup OCI Distribution
+  hosts: localhost
+
+  tasks:
+    - name: Setup Docker OCI Distribution
+      kubernetes.core.k8s:
+        src: ../resources/registry.yaml

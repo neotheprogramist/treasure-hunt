@@ -1,0 +1,70 @@
+# Default values for surrealdb.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: surrealdb/surrealdb
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+args: [start]
+
+surrealdb:
+  # Datastore path
+  #
+  # * tikv example
+  # path: tikv://tikv-pd:2379
+  path: memory
+  # Log configuration
+  log: info
+  # Authentication enabled
+  auth: "true"
+  # If you want to bootstrap the datastore with an initial user, use these values the first time you install the chart
+  # Remember to remove them after the first install, as they are no longer used:
+  # initial_user: ""
+  # initial_pass: ""
+  port: 8000
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 8000
+  targetPort: http
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts: []
+  defaultBackend: true
+
+  tls: []
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

@@ -1,0 +1,34 @@
+---
+- name: Setup Gateway API
+  hosts: localhost
+
+  tasks:
+    - name: Create Gateway API CRD
+      kubernetes.core.k8s:
+        src: https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.0.0/standard-install.yaml
+
+    - name: Install NGINX Gateway Fabric Helm Chart for development
+      kubernetes.core.helm:
+        name: nginx-gateway
+        namespace: nginx-gateway
+        chart_ref: oci://ghcr.io/nginxinc/charts/nginx-gateway-fabric
+        atomic: true
+        create_namespace: true
+        wait: true
+        values: "{{ lookup('file', '../resources/values/gateway.yaml') | from_yaml }}"
+
+    - name: Add label to default namespace to allow access to the gateway
+      kubernetes.core.k8s:
+        name: default
+        kind: Namespace
+        merge_type:
+          - strategic-merge
+        definition:
+          metadata:
+            labels:
+              nginx-gateway-access: "true"
+
+    - name: Create the Gateway
+      kubernetes.core.k8s:
+        namespace: default
+        src: ../resources/gateway.yaml

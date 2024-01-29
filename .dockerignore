@@ -1,0 +1,65 @@
+# Venv
+.venv
+
+# Git
+/.git
+
+# Readme
+[Rr][Ee][Aa][Dd][Mm][Ee]
+[Rr][Ee][Aa][Dd][Mm][Ee].[Mm][Dd]
+
+# Ignores
+.dockerignore
+.eslintignore
+.gitignore
+.prettierignore
+
+# Docker
+Dockerfile
+*.dockerfile
+
+# k8s
+/k8s
+
+# Build
+/dist
+/lib
+/lib-types
+/server
+/tmp
+
+# Development
+node_modules
+*.local
+package-lock.json
+.tool-versions
+
+# Cache
+.cache
+.mf
+.rollup.cache
+tsconfig.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor
+/.vscode
+
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Yarn
+.yarn/*
+!.yarn/releases

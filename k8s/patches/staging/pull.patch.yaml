@@ -1,0 +1,7 @@
+- op: add
+  path: /spec/template/spec/imagePullSecrets
+  value:
+    - name: regcred
+- op: add
+  path: /spec/template/spec/containers/0/image
+  value: registry.visoft.dev/webapp:latest

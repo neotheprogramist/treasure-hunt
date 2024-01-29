@@ -1,0 +1,19 @@
+---
+- name: Setup SurrealDB
+  hosts: localhost
+
+  tasks:
+    - name: Install SurrealDB
+      vars:
+        credentials: "{{ {'initial_user': surrealdb_user, 'initial_pass': surrealdb_pass} }}"
+        file_values: "{{ lookup('file', '../resources/values/surrealdb.yaml') | from_yaml }}"
+        combined_values: "{{ file_values | combine({'surrealdb': credentials}, recursive=True) }}"
+      kubernetes.core.helm:
+        name: surrealdb
+        namespace: surrealdb
+        chart_ref: surrealdb
+        chart_repo_url: https://helm.surrealdb.com
+        atomic: true
+        create_namespace: true
+        wait: true
+        values: "{{ combined_values }}"

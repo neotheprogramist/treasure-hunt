@@ -1,0 +1,15 @@
+---
+- name: Load dotenv
+  ansible.builtin.import_playbook: playbooks/dotenv.yaml
+
+- name: Install Cert-Manager
+  ansible.builtin.import_playbook: playbooks/cert-manager.yaml
+
+- name: Install OCI Distribution
+  ansible.builtin.import_playbook: playbooks/registry.yaml
+
+- name: Install NGINX Gateway Fabric
+  ansible.builtin.import_playbook: playbooks/gateway.yaml
+
+- name: Install SurrealDB
+  ansible.builtin.import_playbook: playbooks/surrealdb.yaml

@@ -1,0 +1,49 @@
+# Venv
+.venv
+
+# Env
+.env
+
+# Build
+/dist
+/lib
+/lib-types
+/server
+/tmp
+
+# Development
+node_modules
+*.local
+package-lock.json
+
+# Cache
+.cache
+.mf
+.rollup.cache
+tsconfig.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor
+.vscode/*
+!.vscode/launch.json
+!.vscode/*.code-snippets
+
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Yarn
+.yarn/*
+!.yarn/releases

@@ -1,0 +1,19 @@
+---
+- name: Setup Environment from .env file
+  hosts: localhost
+
+  tasks:
+    - name: Load .env file
+      shell: cat ../../k8s/patches/dev/.env.local
+      register: dotenv
+
+    - name: Create dictionary from .env
+      set_fact:
+        env_vars: "{{ env_vars | default({}) | combine({item.split('=')[0]: item.split('=')[1]}) }}"
+      loop: "{{ dotenv.stdout_lines }}"
+      when: item | regex_search('^[\\w]+=[\\w]+')
+
+    - name: Extract envs from env_vars
+      set_fact:
+        surrealdb_user: "{{ env_vars['SURREALDB_USER'] }}"
+        surrealdb_pass: "{{ env_vars['SURREALDB_PASS'] }}"
