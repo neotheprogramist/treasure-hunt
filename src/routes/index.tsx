@@ -16,25 +16,9 @@ export default component$(() => {
         <header class="mt-10 justify-center text-center text-7xl font-light leading-[56px] text-black">
           Let the <br /> hunt begin
         </header>
-        <section class="mt-12 w-[246px] justify-center text-center text-2xl leading-7 text-black">
+        <section class="my-12 w-[246px] justify-center text-center text-2xl leading-7 text-black">
           Claim badges and unlock a Mystery Box!
         </section>
-        <form class="mt-28 flex items-stretch gap-5 self-stretch whitespace-nowrap text-black">
-          <fieldset class="flex flex-1 flex-col items-stretch justify-center rounded-3xl border-[1.5px] border-solid border-black py-3.5">
-            <legend class="justify-center text-2xl leading-6">KSOX</legend>
-            <div class="mt-20 justify-center text-lg leading-4">Badge</div>
-          </fieldset>
-          <div class="flex h-[132px] w-[132px] flex-col items-stretch justify-center rounded-3xl bg-stone-950 pl-5 text-neutral-700">
-            <div class="justify-center text-2xl leading-6">
-              Hi <br /> World!
-            </div>
-            <div class="mt-12 justify-center text-lg leading-4">Badge</div>
-          </div>
-          <fieldset class="flex flex-1 flex-col items-stretch justify-center rounded-3xl border-[1.5px] border-solid border-black py-3.5 pl-5">
-            <legend class="justify-center text-2xl leading-6">KSOX</legend>
-            <div class="mt-16 justify-center text-lg leading-4">Badge</div>
-          </fieldset>
-        </form>
         <ConnectButton />
       </div>
     </div>
