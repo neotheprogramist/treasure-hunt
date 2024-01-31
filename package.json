@@ -54,10 +54,10 @@
     "@arx-research/libhalo": "^1.2.26",
     "@dnlup/fastify-traps": "^3.0.2",
     "@nightlylabs/wallet-selector-polkadot": "^0.1.19",
-    "@polkadot/api": "^8.14.1",
-    "@polkadot/api-contract": "^8.14.1",
-    "@polkadot/types-codec": "^8.14.1",
-    "@polkadot/types-create": "^8.14.1",
+    "@polkadot/api": "^10.11.2",
+    "@polkadot/api-contract": "^10.11.2",
+    "@polkadot/types-codec": "^10.11.2",
+    "@polkadot/types-create": "^10.11.2",
     "buffer": "^6.0.3",
     "viem": "^2.6.1"
   }
