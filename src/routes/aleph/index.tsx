@@ -19,7 +19,7 @@ const mintNft = server$(async function* (accountId: string | null) {
     const keyring = new Keyring({ type: "sr25519" });
     const account = keyring.addFromUri(seed);
 
-    console.log("Minting NFT", account.address);
+    yield `Minting NFT for ${account.address}`;
     const contract = new ContractPromise(
       alephZero,
       contractAbi,
