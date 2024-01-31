@@ -8,7 +8,7 @@ source .env.local && \
 kubectl create namespace treasure-hunt-production --dry-run=client -o yaml | kubectl apply -f - && \
 
 # Delete old deployment
-kubectl delete -k k8s/patches/production && \
+# kubectl delete -k k8s/patches/production && \
 
 # Build the Docker image
 podman build -t treasure-hunt:latest . && \
