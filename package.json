@@ -35,18 +35,30 @@
     "@types/node": "^20.11.6",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
+    "autoprefixer": "^10.4.14",
     "dotenv": "^16.3.2",
     "eslint": "^8.56.0",
     "eslint-plugin-qwik": "^1.4.1",
     "fastify": "^4.17.0",
     "fastify-plugin": "^4.5.0",
+    "postcss": "^8.4.31",
     "prettier": "^3.2.4",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "tailwindcss": "3.3.3",
     "typescript": "5.3.3",
     "undici": "*",
     "vite": "^5.0.12",
     "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {
-    "@dnlup/fastify-traps": "^3.0.2"
+    "@arx-research/libhalo": "^1.2.26",
+    "@dnlup/fastify-traps": "^3.0.2",
+    "@nightlylabs/wallet-selector-polkadot": "^0.1.19",
+    "@polkadot/api": "^8.14.1",
+    "@polkadot/api-contract": "^8.14.1",
+    "@polkadot/types-codec": "^8.14.1",
+    "@polkadot/types-create": "^8.14.1",
+    "buffer": "^6.0.3",
+    "viem": "^2.6.1"
   }
 }

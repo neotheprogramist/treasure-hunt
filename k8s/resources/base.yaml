@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp-template
+  name: treasure-hunt
   labels:
-    app.kubernetes.io/name: webapp-template
+    app.kubernetes.io/name: treasure-hunt
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: webapp-template
+      app.kubernetes.io/name: treasure-hunt
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: webapp-template
+        app.kubernetes.io/name: treasure-hunt
     spec:
       containers:
-        - name: webapp-template
+        - name: treasure-hunt
           envFrom:
             - secretRef:
                 name: secret
@@ -26,10 +26,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapp-template
+  name: treasure-hunt
 spec:
   selector:
-    app.kubernetes.io/name: webapp-template
+    app.kubernetes.io/name: treasure-hunt
   ports:
     - name: tcp
       protocol: TCP
