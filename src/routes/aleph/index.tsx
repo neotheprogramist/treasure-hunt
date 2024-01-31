@@ -19,7 +19,6 @@ const mintNft = server$(async function* (accountId: string | null) {
     const keyring = new Keyring({ type: "sr25519" });
     const account = keyring.addFromUri(seed);
 
-    yield `Minting NFT for ${account.address}`;
     const contract = new ContractPromise(
       alephZero,
       contractAbi,
@@ -36,7 +35,7 @@ const mintNft = server$(async function* (accountId: string | null) {
       resolveFinalized = resolve;
     });
 
-    contract.tx
+    await contract.tx
       .mint_next({ storageDepositLimit: null, gasLimit: -1 }, accountId)
       .signAndSend(account, (result) => {
         if (result.status.isInBlock) {
@@ -78,6 +77,7 @@ export default component$(() => {
       <button
         class="mt-9 rounded-[67px] border-8 border-solid border-gray-950 text-center text-4xl leading-9 text-stone-950"
         onClick$={async () => {
+          msg.value = `Minting NFT for ${address.value}`;
           const response = await mintNft(address.value);
           for await (const m of response) {
             console.log(m);
