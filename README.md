@@ -32,6 +32,10 @@ The Hunt3rs app transforms conferences and exhibitions into interactive, gamifie
 Upon interaction, users (Hunters) instantly receive collectible NFTs and Soulbound Tokens (SBTs).
 Brands gather user data (name, wallet ID, email) for effective connection tracking.
 
+# App Demo
+
+https://youtu.be/IX3dzn-JkYo
+
 # Smart Contracts
 
 Repo: https://github.com/neotheprogramist/hunters-contracts
